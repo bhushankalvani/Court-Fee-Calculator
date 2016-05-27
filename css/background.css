@@ -1,0 +1,66 @@
+body{
+                background:none;
+                color:#FFFFFF;           
+}
+@font-face {
+            font-family: AgencyFont;
+            src: url("../font/AgencyFB-Bold.ttf");
+}
+.header{
+        
+        text-shadow: 1.8px 1.8px 1px rgba(240,201,96,0.6);
+        font-size:250%;
+        font-family: AgencyFont;
+        padding-top: 2%;
+        
+}
+.content{ 
+        width:100%;
+        margin-top:120px;
+        padding-top:15px;
+}
+.full{
+        background: url("../img/background.jpg") no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-position:center;
+        min-height:100%;
+        
+
+        /* For disabling the selection of any kind of text on the page*/
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+}
+
+.p-email{
+        -webkit-touch-callout: text;
+        -webkit-user-select: text;
+        -khtml-user-select: text;
+        -moz-user-select: text;
+        -ms-user-select: text;
+        user-select: text;        
+}
+
+.foot{
+        font-size:110%;
+        background:rgba(0,0,0,0.3);
+        border-radius: 6px;
+}
+.footer{
+        font-size: 80%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0,0,0,0.9);
+        z-index: 2000;
+        color: #e6e6e6;
+        padding-top:2px;
+        max-height:27px;
+}

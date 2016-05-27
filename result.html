@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html class="full">
+	<head>
+	<title>Court Fee Calculator</title>
+	<meta name="viewport" content="width=device-width,height=device-height, initial-scale=1, user-scalable=no; user-scalable=0;">
+	
+        <link  href="css/bootstrap.min.css" rel="stylesheet" />
+        <link  href="css/background.css" rel="stylesheet"/>
+		<style type="text/css">
+			
+			.label{
+				font-size:90%;
+			}
+			.txt{
+				width:70%; 
+				height:65px;
+				text-align: center;
+				font-size:xx-large;
+			}
+            </style>
+	</head>
+	<body onload="onLoad()">
+	<form class="form-horizontal" action="pg2.html">
+		<div class="container-fluid text-center center-block">
+		 	
+			 	<div class="row">
+			 		<div class="navbar navbar-fixed-top header blockquote">
+			 			<div>
+			 				<strong><p>Court Fee Calculator<br> for Civil court of <br> Gujarat</p></strong>
+			 			</div>
+			 			
+			 		</div>
+			 		
+			 		<div class="col-xs-12 col-sm-12 col-md-12 content text-uppercase blockquote">
+			 		<hr><div>
+			 				<label for="result" class="label label-default">Appropriate Court Fee is as Under</label><br><br>
+
+			 				<center><input id="outTxt" class="form-control txt" type="text" readonly="true"></center><br>
+			 				
+			 				<label for="Thank You" class="label label-info">Thank You!</label>
+			 				<br><br>
+
+			 				<button class="btn btn-primary btn-lg" type="submit">New Calculation
+			 				
+			 				</button>
+			 			</div>
+			 			<hr>
+			 		</div>
+
+			 		<div class="col-xs-12 col-sm-12 col-md-12 blockquote ">
+			 			<div><strong>
+			 				<p class="foot">Initiative By: Jyotindrasinh Vala. <br>
+                    		For suggestions, Contact Us<br>
+                    		Phone: <span class="p-email">+919998992299 </span><br>
+                    		Email:<span class="p-email"> jyotindrasinh@gmail.com </span> </p></strong>
+			 			</div>
+			 		</div>
+			 	</div>
+		</div>
+
+		<div class="row">
+       		<div class="container-fluid">
+        		<div class="footer text-center" >
+                         <p>Developed by:<a href="dev-info.html">&nbsp;Bhushan Kalvani</a></p>
+        		</div>
+        	</div>
+        </div>
+
+		
+
+		
+		<script>
+
+			//Get values from previous page on Load
+			function onLoad(){
+			//Calcualting and getting Values from previous page
+				var amount;
+				var checked;
+				var fees;
+				
+				//Getting values from the URL
+				var $_GET = {};
+
+				document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
+    			function decode(s) {
+        			return decodeURIComponent(s.split("+").join(" "));
+    			}
+    				$_GET[decode(arguments[1])] = decode(arguments[2]);
+				});
+				
+				//URL values stored in these variables
+				amount =  $_GET["amount"];
+				fees = calcCharge(amount);
+				
+				document.getElementById("outTxt").value = fees;
+			}
+
+			function calcCharge(amount){
+				//Calculating the charge
+				switch(true){
+					case amount>=1 && amount<=1000:
+						return 10;
+						break;
+					case amount>=1001 && amount<=2000:
+						return 200;
+						break;
+					case amount>=2001 && amount<=3000:
+						return 300;
+						break;
+					case amount>=3001 && amount<=4000:
+						return 400;
+						break;
+					case amount>=4001 && amount<=5000:
+						return 500;
+						break;
+					case amount>=5001 && amount<=6000:
+						return 600;
+						break;
+					case amount>=6001 && amount<=7000:
+						return 700;
+						break;
+					case amount>=7001 && amount<=8000:
+						return 800;
+						break;
+					case amount>=8001 && amount<=9000:
+						return 900;
+						break;
+					case amount>=9001 && amount<=10000:
+						return 1000;
+						break;
+					case amount>=10001 && amount<=15000:
+						return 1250;
+						break;
+					case amount>=15001 && amount<=20000:
+						return 1500;
+						break;
+					case amount>=20001 && amount<=21000:
+						return 1525;
+						break;
+					case amount>=21001 && amount<=22000:
+						return 1600;
+						break;
+					case amount>=22001 && amount<=23000:
+						return 1675;
+						break;
+					case amount>=23001 && amount<=24000:
+						return 1750;
+						break;
+					case amount>=24001 && amount<=25000:
+						return 1825;
+						break;
+					case amount>=25001 && amount<=26000:
+						return 1900;
+						break;
+					case amount>=26001 && amount<=27000:
+						return 1975;
+						break;
+					case amount>=27001 && amount<=28000:
+						return 2050;
+						break;
+					case amount>=28001 && amount<=29000:
+						return 2125;
+						break;
+					case amount>=29001 && amount<=30000:
+						return 2200;
+						break;
+					case amount>=30001 && amount<=32000:
+						return 2375;
+						break;
+					case amount>=32001 && amount<=34000:
+						return 2500;
+						break;
+					case amount>=34001 && amount<=36000:
+						return 2650;
+						break;
+					case amount>=36001 && amount<=38000:
+						return 2800;
+						break;
+					case amount>=38001 && amount<=40000:
+						return 2950;
+						break;
+					case amount>=40001 && amount<=42000:
+						return 3100;
+						break;
+					case amount>=42001 && amount<=44000:
+						return 3250;
+						break;
+					case amount>=44001 && amount<=46000:
+						return 3400;
+						break;
+					case amount>=46001 && amount<=48000:
+						return 3550;
+						break;
+					case amount>=48001 && amount<=50000:
+						return 3700;
+						break;
+					case amount>=50001 && amount<=55000:
+						return 4000;
+						break;
+					case amount>=55001 && amount<=60000:
+						return 4300;
+						break;
+					case amount>=60001 && amount<=65000:
+						return 4600;
+						break;
+					case amount>=65001 && amount<=70000:
+						return 4900;
+						break;
+					case amount>=70001 && amount<=75000:
+						return 5200;
+						break;
+					case amount>=75001 && amount<=80000:
+						return 5350;
+						break;
+					case amount>=80001 && amount<=85000:
+						return 5500;
+						break;
+					case amount>=85001 && amount<=90000:
+						return 5650;
+						break;
+					case amount>=90001 && amount<=95000:
+						return 5800;
+						break;
+					case amount>=95001 && amount<=100000:
+						return 5950;
+						break;
+					case amount>=100001 && amount<=110000:
+						return 6150;
+						break;
+					case amount>=110001 && amount<=120000:
+						return 6350;
+						break;
+					case amount>=120001 && amount<=130000:
+						return 6550;
+						break;
+					case amount>=130001 && amount<=140000:
+						return 6750;
+						break;
+					case amount>=140001 && amount<=150000:
+						return 6950;
+						break;
+					case amount>=150001 && amount<=160000:
+						return 7150;
+						break;
+					case amount>=160001 && amount<=170000:
+						return 7350;
+						break;
+					case amount>=170001 && amount<=180000:
+						return 7550;
+						break;
+					case amount>=180001 && amount<=190000:
+						return 7750;
+						break;
+					case amount>=190001 && amount<=200000:
+						return 7950;
+						break;
+					case amount>=200001 && amount<=210000:
+						return 8150;
+						break;
+					case amount>=210001 && amount<=220000:
+						return 8350;
+						break;
+					case amount>=220001 && amount<=230000:
+						return 8550;
+						break;
+					case amount>=230001 && amount<=240000:
+						return 8750;
+						break;
+					case amount>=240001 && amount<=250000:
+						return 8950;
+						break;
+					case amount>=250001 && amount<=260000:
+						return 9150;
+						break;
+					case amount>=260001 && amount<=270000:
+						return 9350;
+						break;
+					case amount>=270001 && amount<=280000:
+						return 9550;
+						break;
+					case amount>=280001 && amount<=290000:
+						return 9750;
+						break;
+					case amount>=290001 && amount<=300000:
+						return 9950;
+						break;
+					case amount>=300001 && amount<=320000:
+						return 10350;
+						break;
+					case amount>=320001 && amount<=330000:
+						return 10550;
+						break;
+					case amount>=330001 && amount<=340000:
+						return 10750;
+						break;
+					case amount>=340001 && amount<=350000:
+						return 10950;
+						break;
+					case amount>=350001 && amount<=360000:
+						return 11150;
+						break;
+					case amount>=360001 && amount<=370000:
+						return 11350;
+						break;
+					case amount>=370001 && amount<=380000:
+						return 11550;
+						break;
+					case amount>=380001 && amount<=390000:
+						return 11750;
+						break;
+					case amount>=390001 && amount<=400000:
+						return 11950;
+						break;
+					case amount>=400001 && amount<=410000:
+						return 12150;
+						break;
+					case amount>=410001 && amount<=420000:
+						return 12350;
+						break;
+					case amount>=420001 && amount<=430000:
+						return 12550;
+						break;
+					case amount>=430001 && amount<=440000:
+						return 12750;
+						break;
+					case amount>=440001 && amount<=450000:
+						return 12950;
+						break;
+					case amount>=450001 && amount<=460000:
+						return 13150;
+						break;
+					case amount>=460001 && amount<=470000:
+						return 13350;
+						break;
+					case amount>=470001 && amount<=480000:
+						return 13550;
+						break;
+					case amount>=480001 && amount<=490000:
+						return 13750;
+						break;
+					case amount>=490001 && amount<=500000:
+						return 13950;
+						break;
+					case amount>=500001 && amount<=510000:
+						return 14150;
+						break;
+					case amount>=510001 && amount<=520000:
+						return 14350;
+						break;
+					case amount>=520001 && amount<=530000:
+						return 14550;
+						break;
+					case amount>=530001 && amount<=540000:
+						return 14750;
+						break;
+					case amount>=540001 && amount<=550000:
+						return 14950;
+						break;
+					case amount>=550001 && amount<=560000:
+						return 15150;
+						break;
+					case amount>=560001 && amount<=570000:
+						return 15350;
+						break;
+					case amount>=570001 && amount<=580000:
+						return 15550;
+						break;
+					case amount>=580001 && amount<=590000:
+						return 15750;
+						break;
+					case amount>=590001 && amount<=600000:
+						return 15950;
+						break;
+					case amount>=600001 && amount<=610000:
+						return 16150;
+						break;
+					case amount>=610001 && amount<=620000:
+						return 16350;
+						break;
+					case amount>=620001 && amount<=630000:
+						return 16550;
+						break;
+					case amount>=630001 && amount<=640000:
+						return 16750;
+						break;
+					case amount>=640001 && amount<=650000:
+						return 16950;
+						break;
+					case amount>=650001 && amount<=660000:
+						return 17150;
+						break;
+					case amount>=660001 && amount<=670000:
+						return 17350;
+						break;
+					case amount>=670001 && amount<=680000:
+						return 17550;
+						break;
+					case amount>=680001 && amount<=690000:
+						return 17750;
+						break;
+					case amount>=690001 && amount<=700000:
+						return 17950;
+						break;
+					case amount>=700001 && amount<=710000:
+						return 18150;
+						break;
+					case amount>=710001 && amount<=720000:
+						return 18350;
+						break;
+					case amount>=720001 && amount<=730000:
+						return 18550;
+						break;
+					case amount>=730001 && amount<=740000:
+						return 18750;
+						break;
+					case amount>=740001 && amount<=750000:
+						return 18950;
+						break;
+					case amount>=750001 && amount<=760000:
+						return 19150;
+						break;
+					case amount>=760001 && amount<=770000:
+						return 19350;
+						break;
+					case amount>=770001 && amount<=780000:
+						return 19550;
+						break;
+					case amount>=780001 && amount<=790000:
+						return 19750;
+						break;
+					case amount>=790001 && amount<=800000:
+						return 19950;
+						break;
+					case amount>=800001 && amount<=810000:
+						return 20150;
+						break;
+					case amount>=810001 && amount<=820000:
+						return 20350;
+						break;
+					case amount>=820001 && amount<=830000:
+						return 20550;
+						break;
+					case amount>=830001 && amount<=840000:
+						return 20750;
+						break;
+					case amount>=840001 && amount<=850000:
+						return 20950;
+						break;
+					case amount>=850001 && amount<=860000:
+						return 21150;
+						break;
+					case amount>=860001 && amount<=870000:
+						return 21350;
+						break;
+					case amount>=870001 && amount<=880000:
+						return 21550;
+						break;
+					case amount>=880001 && amount<=890000:
+						return 21750;
+						break;
+					case amount>=890001 && amount<=900000:
+						return 21950;
+						break;
+					case amount>=900001 && amount<=910000:
+						return 22150;
+						break;
+					case amount>=910001 && amount<=920000:
+						return 22350;
+						break;
+					case amount>=920001 && amount<=930000:
+						return 22550;
+						break;
+					case amount>=930001 && amount<=940000:
+						return 22750;
+						break;
+					case amount>=940001 && amount<=950000:
+						return 22950;
+						break;
+					case amount>=950001 && amount<=960000:
+						return 23150;
+						break;
+					case amount>=960001 && amount<=970000:
+						return 23350;
+						break;
+					case amount>=970001 && amount<=980000:
+						return 23550;
+						break;
+					case amount>=980001 && amount<=990000:
+						return 23750;
+						break;
+					case amount>=990001 && amount<=1000000:
+						return 23950;
+						break;
+					case amount>=1000001 && amount<=1100000:
+						return 25150;
+						break;
+					case amount>=1100001 && amount<=1200000:
+						return 26350;
+						break;
+					case amount>=1200001 && amount<=1300000:
+						return 27550;
+						break;
+					case amount>=1300001 && amount<=1400000:
+						return 28750;
+						break;
+					case amount>=1400001 && amount<=1500000:
+						return 29950;
+						break;
+					case amount>=1500001 && amount<=1600000:
+						return 31150;
+						break;
+					case amount>=1600001 && amount<=1700000:
+						return 32350;
+						break;
+					case amount>=1700001 && amount<=1800000:
+						return 33550;
+						break;
+					case amount>=1800001 && amount<=1900000:
+						return 34750;
+						break;
+					case amount>=1900001 && amount<=2000000:
+						return 35950;
+						break;
+					case amount>=2000001 && amount<=2100000:
+						return 36450;
+						break;
+					case amount>=2100001 && amount<=2200000:
+						return 36950;
+						break;
+					case amount>=2200001 && amount<=2300000:
+						return 37450;
+						break;
+					case amount>=2300001 && amount<=2400000:
+						return 37950;
+						break;
+					case amount>=2400001 && amount<=2500000:
+						return 38450;
+						break;
+					case amount>=2500001 && amount<=2600000:
+						return 38950;
+						break;
+					case amount>=2600001 && amount<=2700000:
+						return 39450;
+						break;
+					case amount>=2700001 && amount<=2800000:
+						return 39950;
+						break;
+					case amount>=2800001 && amount<=2900000:
+						return 40450;
+						break;
+					case amount>=2900001 && amount<=3000000:
+						return 40950;
+						break;
+					case amount>=3000001 && amount<=3100000:
+						return 41450;
+						break;
+					case amount>=3100001 && amount<=3200000:
+						return 41950;
+						break;
+					case amount>=3200001 && amount<=3300000:
+						return 42450;
+						break;
+					case amount>=3300001 && amount<=3400000:
+						return 42950;
+						break;
+					case amount>=3400001 && amount<=3500000:
+						return 43450;
+						break;
+					case amount>=3500001 && amount<=3600000:
+						return 43950;
+						break;
+					case amount>=3600001 && amount<=3700000:
+						return 44450;
+						break;
+					case amount>=3700001 && amount<=3800000:
+						return 44950;
+						break;
+					case amount>=3800001 && amount<=3900000:
+						return 45450;
+						break;
+					case amount>=3900001 && amount<=4000000:
+						return 45950;
+						break;
+					case amount>=4000001 && amount<=4100000:
+						return 46450;
+						break;
+					case amount>=4100001 && amount<=4200000:
+						return 46950;
+						break;
+					case amount>=4200001 && amount<=4300000:
+						return 47450;
+						break;
+					case amount>=4300001 && amount<=4400000:
+						return 47950;
+						break;
+					case amount>=4400001 && amount<=4500000:
+						return 48450;
+						break;
+					case amount>=4500001 && amount<=4600000:
+						return 48950;
+						break;
+					case amount>=4600001 && amount<=4700000:
+						return 49450;
+						break;
+					case amount>=4700001 && amount<=4800000:
+						return 49950;
+						break;
+					case amount>=4800001 && amount<=4900000:
+						return 50450;
+						break;
+					case amount>=4900001 && amount<=5000000:
+						return 50950;
+						break;
+					case amount>=5000001 && amount<=5100000:
+						return 51450;
+						break;
+					case amount>=5100001 && amount<=5200000:
+						return 51950;
+						break;
+					case amount>=5200001 && amount<=5300000:
+						return 52450;
+						break;
+					case amount>=5300001 && amount<=5400000:
+						return 52950;
+						break;
+					case amount>=5400001 && amount<=5500000:
+						return 53450;
+						break;
+					case amount>=5500001 && amount<=5600000:
+						return 53950;
+						break;
+					case amount>=5600001 && amount<=5700000:
+						return 54450;
+						break;
+					case amount>=5700001 && amount<=5800000:
+						return 54950;
+						break;
+					case amount>=5800001 && amount<=5900000:
+						return 55450;
+						break;
+					case amount>=5900001 && amount<=6000000:
+						return 55950;
+						break;
+					case amount>=6000001 && amount<=6100000:
+						return 56450;
+						break;
+					case amount>=6100001 && amount<=6200000:
+						return 56950;
+						break;
+					case amount>=6200001 && amount<=6300000:
+						return 57450;
+						break;
+					case amount>=6300001 && amount<=6400000:
+						return 57950;
+						break;
+					case amount>=6400001 && amount<=6500000:
+						return 58450;
+						break;
+					case amount>=6500001 && amount<=6600000:
+						return 58950;
+						break;
+					case amount>=6600001 && amount<=6700000:
+						return 59450;
+						break;
+					case amount>=6700001 && amount<=6800000:
+						return 59950;
+						break;
+					case amount>=6800001 && amount<=6900000:
+						return 60450;
+						break;
+					case amount>=6900001 && amount<=7000000:
+						return 60950;
+						break;
+					case amount>=7000001 && amount<=7100000:
+						return 61450;
+						break;
+					case amount>=7100001 && amount<=7200000:
+						return 61950;
+						break;
+					case amount>=7200001 && amount<=7300000:
+						return 62450;
+						break;
+					case amount>=7300001 && amount<=7400000:
+						return 62950;
+						break;
+					case amount>=7400001 && amount<=7500000:
+						return 63450;
+						break;
+					case amount>=7500001 && amount<=7600000:
+						return 63950;
+						break;
+					case amount>=7600001 && amount<=7700000:
+						return 64450;
+						break;
+					case amount>=7700001 && amount<=7800000:
+						return 64950;
+						break;
+					case amount>=7800001 && amount<=7900000:
+						return 65450;
+						break;
+					case amount>=7900001 && amount<=8000000:
+						return 65950;
+						break;
+					case amount>=8000001 && amount<=8100000:
+						return 66450;
+						break;
+					case amount>=8100001 && amount<=8200000:
+						return 66950;
+						break;
+					case amount>=8200001 && amount<=8300000:
+						return 67450;
+						break;
+					case amount>=8300001 && amount<=8400000:
+						return 67950;
+						break;
+					case amount>=8400001 && amount<=8500000:
+						return 68450;
+						break;
+					case amount>=8500001 && amount<=8600000:
+						return 68950;
+						break;
+					case amount>=8600001 && amount<=8700000:
+						return 69450;
+						break;
+					case amount>=8700001 && amount<=8800000:
+						return 69950;
+						break;
+					case amount>=8800001 && amount<=8900000:
+						return 70450;
+						break;
+					case amount>=8900001 && amount<=9000000:
+						return 70950;
+						break;
+					case amount>=9000001 && amount<=9100000:
+						return 71450;
+						break;
+					case amount>=9100001 && amount<=9200000:
+						return 71950;
+						break;
+					case amount>=9200001 && amount<=9300000:
+						return 72450;
+						break;
+					case amount>=9300001 && amount<=9400000:
+						return 72950;
+						break;
+					case amount>=9400001 && amount<=9500000:
+						return 73450;
+						break;
+					case amount>=9500001 && amount<=9600000:
+						return 73950;
+						break;
+					case amount>=9600001 && amount<=9700000:
+						return 74450;
+						break;
+					case amount>=9700001 && amount<=9800000:
+						return 74950;
+						break;
+					case amount>=9800001 && amount<=9900000:
+						return 75000;
+						break;
+					case amount>=9900001:
+						return 75000;
+						break;
+					}
+				}		
+		</script>
+
+
+
+
+
+		<script src="js/jquery.min.js" type="text/javascript"></script>
+
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+    </form>
+	</body>
+
+
+
+</html>
